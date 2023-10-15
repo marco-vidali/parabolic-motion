@@ -23,7 +23,7 @@ export default function InputForm({
     <input
       type="text"
       placeholder={placeholder}
-      className="input input-bordered w-64"
+      className="input input-bordered w-96 2xl:w-64"
       value={value !== null ? value : ""}
       onChange={handleChange}
     />

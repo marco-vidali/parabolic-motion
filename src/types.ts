@@ -3,6 +3,7 @@ export type SimulationProps = {
   s0Y: number;
   v0: number;
   angle: number;
+  nearness: number;
 };
 
 export type StatsProps = {
@@ -10,6 +11,7 @@ export type StatsProps = {
   y: number;
   vX: number;
   vY: number;
+  nearness: number;
 };
 
 export type StartStopProps = {
