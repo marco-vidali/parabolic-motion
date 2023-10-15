@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Stats from "./Stats";
 
 export default function Simulation({
   s0X,
@@ -55,13 +56,7 @@ export default function Simulation({
   return (
     <>
       <div className="absolute top-4 left-4 text-base-content">
-        <span>X: {x.toFixed(3)}m</span>
-        <br></br>
-        <span>Y: {y.toFixed(3)}m</span>
-        <br></br>
-        <span>vX: {vX.toFixed(3)}m/s</span>
-        <br></br>
-        <span>vY: {vY.toFixed(3)}m/s</span>
+        <Stats x={x} y={y} vX={vX} vY={vY} />
       </div>
       <div
         className="w-8 h-8 rounded-full absolute bg-primary"

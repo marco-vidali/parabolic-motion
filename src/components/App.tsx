@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Data from "./components/Data";
-import Simulation from "./components/Simulation";
+import Data from "./Data";
+import Simulation from "./Simulation";
+import StartStop from "./StartStop";
 
 function App() {
   const [started, setStarted] = useState(false);
@@ -107,13 +108,7 @@ function App() {
           />
         </Data>
       )}
-
-      <button
-        className="btn btn-primary absolute bottom-4 right-4 w-32"
-        onClick={handleStarted}
-      >
-        {started ? "Stop" : "Start"}
-      </button>
+      <StartStop started={started} onToggleStarted={handleStarted} />
     </>
   );
 }
