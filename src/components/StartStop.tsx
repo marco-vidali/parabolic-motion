@@ -1,12 +1,9 @@
-import { MouseEventHandler } from "react";
+import { StartStopProps } from "../types";
 
 export default function StartStop({
   started,
   onToggleStarted,
-}: {
-  started: boolean;
-  onToggleStarted: MouseEventHandler<HTMLButtonElement>;
-}) {
+}: StartStopProps) {
   return (
     <button
       className="btn btn-primary absolute bottom-4 right-4 w-32"

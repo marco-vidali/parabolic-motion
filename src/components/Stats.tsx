@@ -1,14 +1,7 @@
-export default function Stats({
-  x,
-  y,
-  vX,
-  vY,
-}: {
-  x: number;
-  y: number;
-  vX: number;
-  vY: number;
-}) {
+import React from "react";
+import { StatsProps } from "../types";
+
+export default function Stats({ x, y, vX, vY }: StatsProps) {
   return (
     <>
       <span>X: {x.toFixed(3)}m</span>
