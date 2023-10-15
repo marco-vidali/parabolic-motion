@@ -18,8 +18,7 @@ function App() {
       setV0(null);
       setAngle(null);
     } else {
-      if (!s0X === null || !s0Y === null || !v0 === null || !angle === null)
-        return;
+      if (s0X === null || s0Y === null || v0 === null || angle === null) return;
       setStarted(true);
     }
   }
