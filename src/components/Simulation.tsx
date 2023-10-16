@@ -2,13 +2,7 @@ import { useEffect, useState } from "react";
 import { SimulationProps } from "../types";
 import Stats from "./Stats";
 
-export default function Simulation({
-  s0X,
-  s0Y,
-  v0,
-  angle,
-  nearness,
-}: SimulationProps) {
+export default function Simulation({ s0X, s0Y, v0, angle }: SimulationProps) {
   const fixedAngle = (angle * Math.PI) / 180;
   const g = 9.807;
   const v0X = v0 * Math.cos(fixedAngle);
@@ -24,8 +18,8 @@ export default function Simulation({
   const updatePosition = () => {
     const now = new Date().getTime();
     const t = (now - start) / 1000;
-    const newX = (s0X + v0X * t) * nearness;
-    const newY = (-(g * Math.pow(t, 2)) / 2 + v0Y * t + (s0Y || 0)) * nearness;
+    const newX = s0X + v0X * t;
+    const newY = -(g * Math.pow(t, 2)) / 2 + v0Y * t + (s0Y || 0);
     const newVy = -(9.81 * t) + v0Y;
 
     if (newY <= 0) {
@@ -53,7 +47,7 @@ export default function Simulation({
   return (
     <>
       <div className="absolute top-4 left-4 text-base-content">
-        <Stats x={x} y={y} vX={vX} vY={vY} nearness={nearness} />
+        <Stats x={x} y={y} vX={vX} vY={vY} />
       </div>
       <div
         className="w-8 h-8 rounded-full absolute bg-primary"

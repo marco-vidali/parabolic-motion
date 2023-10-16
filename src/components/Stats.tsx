@@ -1,11 +1,11 @@
 import { StatsProps } from "../types";
 
-export default function Stats({ x, y, vX, vY, nearness }: StatsProps) {
+export default function Stats({ x, y, vX, vY }: StatsProps) {
   return (
     <>
-      <span>X: {(x / nearness).toFixed(3)}m</span>
+      <span>X: {x.toFixed(3)}m</span>
       <br></br>
-      <span>Y: {(y / nearness).toFixed(3)}m</span>
+      <span>Y: {y.toFixed(3)}m</span>
       <br></br>
       <span>vX: {vX.toFixed(3)}m/s</span>
       <br></br>

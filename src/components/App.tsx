@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Simulation from "./Simulation";
 import InputForm from "./InputForm";
 import Data from "./Data";
@@ -10,7 +10,6 @@ export default function App() {
   const [s0Y, setS0Y] = useState<number | null>(null);
   const [v0, setV0] = useState<number | null>(null);
   const [angle, setAngle] = useState<number | null>(null);
-  const [nearness, setNearness] = useState<number | null>(null);
 
   function handleStarted() {
     if (started) {
@@ -20,16 +19,8 @@ export default function App() {
       setS0Y(null);
       setV0(null);
       setAngle(null);
-      setNearness(null);
     } else {
-      if (
-        s0X === null ||
-        s0Y === null ||
-        v0 === null ||
-        angle === null ||
-        !nearness
-      )
-        return;
+      if (s0X === null || s0Y === null || v0 === null || angle === null) return;
       setStarted(true);
     }
   }
@@ -37,13 +28,7 @@ export default function App() {
   return (
     <>
       {started ? (
-        <Simulation
-          s0X={s0X!}
-          s0Y={s0Y!}
-          v0={v0!}
-          angle={angle!}
-          nearness={nearness!}
-        />
+        <Simulation s0X={s0X!} s0Y={s0Y!} v0={v0!} angle={angle!} />
       ) : (
         <Data>
           <InputForm
@@ -65,11 +50,6 @@ export default function App() {
             placeholder="Initial velocity angle"
             value={angle}
             onChange={setAngle}
-          />
-          <InputForm
-            placeholder="Nearness from body"
-            value={nearness}
-            onChange={setNearness}
           />
         </Data>
       )}
