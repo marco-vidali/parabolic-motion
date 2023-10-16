@@ -1,12 +1,10 @@
+import { InputFormProps } from "../types";
+
 export default function InputForm({
   placeholder,
   value,
   onChange,
-}: {
-  placeholder: string;
-  value: number | null;
-  onChange: (value: number | null) => void;
-}) {
+}: InputFormProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.trim();
     if (value === "") {

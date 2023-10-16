@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { SimulationProps } from "../types";
 import Stats from "./Stats";
 
+const g = 9.807;
+let animationFrameId: number;
+const start = new Date().getTime();
+
 export default function Simulation({ s0X, s0Y, v0, angle }: SimulationProps) {
   const fixedAngle = (angle * Math.PI) / 180;
-  const g = 9.807;
   const v0X = v0 * Math.cos(fixedAngle);
   const v0Y = v0 * Math.sin(fixedAngle);
-  let animationFrameId: number;
-  const start = new Date().getTime();
 
   const [x, setX] = useState(s0X);
   const [y, setY] = useState(s0Y);

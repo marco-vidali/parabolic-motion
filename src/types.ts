@@ -1,3 +1,9 @@
+export type InputFormProps = {
+  placeholder: string;
+  value: number | null;
+  onChange: (value: number | null) => void;
+};
+
 export type SimulationProps = {
   s0X: number;
   s0Y: number;
